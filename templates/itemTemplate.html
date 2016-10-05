@@ -1,0 +1,31 @@
+<div>
+
+   
+    <span class="remove" ng-click="remove()">
+        <button class="close white">&times;</button>
+    </span>
+     
+    <span class="index">{{index+1}}.</span>
+    
+    <span class="title" ng-model = "item.title" ng-class="{'completed': item.complete}">{{item.title}}</span>
+    
+    <span class="complete">
+        <input type="checkbox" ng-checked="{{item.complete}}" ng-model="item.complete"/>
+    </span>
+    
+    <br/>
+    
+    <span class="description">
+        Description: {{item.description}}
+    </span>
+    
+    <br/>
+    
+    <span class="date">Date: {{item.dueDate | date: "dd/MM/yyyy"}}</span>
+    
+    <br/>
+    
+    <span class="categories">  Category: {{item.category}}</span>
+    
+
+</div>

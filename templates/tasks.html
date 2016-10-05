@@ -1,0 +1,48 @@
+<div class="row">
+    <center> <h1 class = 'colorTag'>{{title}}</h1> </center>
+    
+    
+    <div class="col-sm-6 col-sm-offset-3">
+        <center> <h2 class = 'remainingToDos'>You have {{itemsFactory.itemsLength()}} items remaining</h2> </center>
+    </div>
+    
+    
+    <div class="col-sm-6 col-sm-offset-3">
+        <p class="col-sm-12">
+            <input type="text" ng-model="addItem.title" placeholder="Title" class="form-control" />
+        </p>
+        <p class="col-sm-12">
+            <input type="text" ng-model="addItem.description" placeholder="Description" class="form-control" />
+        </p>
+        <p class="col-sm-6">
+            <input type="date" ng-model="addItem.dueDate" placeholder="due date" class="form-control" />
+        </p>
+        <p class="col-sm-6">
+            <select class = "form-control" name="multipleSelect" id="multipleSelect" ng-model="addItem.category">
+                <option value="{{item}}" ng-repeat="item in categoriesList track by $index">{{item}}</option>
+            </select>
+        </p>
+        <br/>
+        <p class="col-sm-12">
+            <label>Search: <input type = "text" ng-model = "searchByName.title" placeholder = "Search a item.." class = "form-control" /></label>
+        </p>
+        <p class="col-sm-12">
+            <button class="btn btn-primary" ng-click = "addNewItem()" ng-disabled="addItem.title.length === 0">Add</button>
+            <button class="btn btn-primary" ng-model = "sortOrder" ng-click = "customSort('title')">Order by name</button>
+            <a href="#/categories" class="btn btn-warning pull-right"> Manage Categories</a>
+        </p>
+    </div>
+    
+    <div class="col-sm-6 col-sm-offset-3">
+        <ul class="list-group noDec">
+            <li todo-item
+                item="item" 
+                class="faded"
+                index="$index" 
+                remove="itemsFactory.removeItem(item)" 
+                ng-repeat="item in itemsFactory.getItems() | orderBy : sortOrder | filter : searchByName track by $index" >
+            </li>
+        </ul>
+    </div>
+
+</div>

@@ -1,0 +1,82 @@
+            body {
+                font-family: 'Slabo 30px', serif;
+            }
+            
+            [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+                display: none !important;
+            }
+            
+            .completed {
+                text-decoration: line-through;
+                color: darkgray;
+            }
+            
+            .noDec {
+                list-style-type: none;
+                width: 50%;
+            }
+        
+            .noDec > li {
+                background-color: #22A7F0;
+                margin: 10px;
+                color: white;
+                padding: 10px;
+            
+            }
+            
+            .remove {
+                cursor: pointer;
+            }
+
+
+            .remainingToDos {
+                margin: 20px;
+                background-color: #30A9DE;
+                color: white;
+                padding: 10px;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }
+
+            .colorTag {
+                color: #30A9DE;
+            }
+
+            .hCategories {
+	           background-color: #22A7F0;
+               border-style: none;
+               margin: 10px;
+            }
+
+            .hCategories:hover {
+	           background-color: #3A539B;
+               color: white;
+               transition: background-color 0.5s ease;
+               box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            }    
+        
+            .noDec > li:hover {
+                background-color: #3A539B;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                
+            }
+            
+            .faded {
+                transition: 0.3s linear ;
+                -webkit-transition: 0.3s linear ;
+            }
+            
+            .faded.ng-enter {
+                opacity: 0;
+            }
+            
+            .faded.ng-enter.ng-enter-active {
+                opacity: 1;
+            }
+            
+            .faded.ng-leave {
+                opacity: 1;
+            }
+            
+            .faded.ng-leave.ng-leave-active {
+                opacity: 0;
+            }
